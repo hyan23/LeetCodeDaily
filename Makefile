@@ -15,4 +15,4 @@ all: $(TARGETS)
 	$(CXX) $(CXXFLAGS) -o $@ $<
 
 clean:
-	rm $(TARGETS)
+	rm -f $(TARGETS)
