@@ -4,7 +4,8 @@
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
 #include <iostream>
-#include <map>
+// #include <map>
+#include <cstring>
 
 using namespace std;
 
@@ -14,12 +15,17 @@ class Solution
     int lengthOfLongestSubstring(string s)
     {
         int result = 0;
-        map<char, int> charMap;
-
+        // map<char, int> charMap;
+        //// substitution
+        int charMap[256];
+        memset(charMap, -1, sizeof (charMap));
+        ////
+        
         int i = 0, j = 0;
         while (j < s.length())
         {
             char ch = s[j];
+            /*
             auto iter = charMap.find(ch);
             if (iter != charMap.end())
             {
@@ -28,6 +34,13 @@ class Solution
                     i = iter->second + 1;
                 }
             }
+            */
+            //// substitution
+            if (charMap[ch] >= i)
+            {
+                i = charMap[ch] + 1;
+            }
+            //// 
             charMap[ch] = j;
             int length = j - i + 1;
             if (length > result)
