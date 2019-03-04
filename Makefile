@@ -1,6 +1,7 @@
-# Makefile for LeetCode
+# Makefile for LeetCodeDaily
 # written by hyan23
 # 2019.03.03
+#################################
 
 CXX = g++
 CXXFLAGS = -Wall
