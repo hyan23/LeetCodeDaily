@@ -10,36 +10,34 @@ using namespace std;
 class Solution
 {
   public:
-    int getDigit(int x, int pos)
-    {
-        int lut[] = { 1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000 };
-        return x / lut[pos] % 10;
-    }
-    
     bool isPalindrome(int x)
     {
         if (x < 0)
         {
             return false;
         }
+
+        static int lut[] = {1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000};
+#define DIGIT(x, pos) ((x) / lut[pos] % 10)
+
         int left = 9;
         while (left >= 0)
         {
-            if (getDigit(x, left))
+            if (DIGIT(x, left))
             {
                 break;
             }
-            left --;
+            left--;
         }
         int right = 0;
         while (left > right)
         {
-            if (getDigit(x, left) != getDigit(x, right))
+            if (DIGIT(x, left) != DIGIT(x, right))
             {
                 return false;
             }
-            left --;
-            right ++;
+            left--;
+            right++;
         }
         return true;
     }
