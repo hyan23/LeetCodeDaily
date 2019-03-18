@@ -1,4 +1,4 @@
-// 3SumClosest.cpp
+// 3SumClosest.go
 // Author: hyan23
 // 2019.03.11
 // https://leetcode.com/problems/3sum-closest/
