@@ -9,6 +9,11 @@ func main() {
 
 }
 
+type ListNode struct {
+	Val int
+	Next *ListNode
+}
+
 func toLinkedList(arr []int) *ListNode {
 	var head, cur *ListNode = nil, nil
 	for i, val := range arr {
