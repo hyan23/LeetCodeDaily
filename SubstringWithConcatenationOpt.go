@@ -27,7 +27,7 @@ func findSubstring(s string, words []string) []int {
 	for i := 0; i < length; i++ {
 		for j := i; j < len(s); {
 			m2 := make(map[string]int)
-			pos := make(map[string]int)
+			wordPos := make(map[string]int)
 			count := 0
 
 			notFound := false
@@ -40,8 +40,8 @@ func findSubstring(s string, words []string) []int {
 				if _, ok := m[fragment]; ok {
 					m2[fragment]++
 					count++
-					if _, ok2 := pos[fragment]; !ok2 {
-						pos[fragment] = k
+					if _, ok2 := wordPos[fragment]; !ok2 {
+						wordPos[fragment] = k
 					}
 					if m2[fragment] > m[fragment] {
 						duplicate = true
@@ -59,7 +59,7 @@ func findSubstring(s string, words []string) []int {
 			if notFound {
 				j = k + length
 			} else if duplicate {
-				j = pos[fragment] + length
+				j = wordPos[fragment] + length
 			} else {
 				j = j + length
 			}
@@ -74,8 +74,8 @@ func findSubstring(s string, words []string) []int {
 		return []int{}
 	}
 
-	length := len(words[0])
-	subStrLength := len(words) * length
+	wordLength := len(words[0])
+	subStrLength := len(words) * wordLength
 	if len(s) < subStrLength {
 		return []int{}
 	}
@@ -87,11 +87,11 @@ func findSubstring(s string, words []string) []int {
 
 	indices := []int{}
 
-	for i := 0; i < length; i++ {
+	for i := 0; i < wordLength; i++ {
 		m2 := make(map[string]int)
-		keys := []string{}
 		count := 0
-		pos := make(map[string]int)
+		substr := []string{}
+		wordPos := make(map[string][]int)
 		for j := i; j < len(s); {
 			notFound := false
 			duplicate := false
@@ -99,15 +99,16 @@ func findSubstring(s string, words []string) []int {
 
 			k := j
 			fragment := s
-			for ; k+length <= len(s); k += length {
-				fragment = s[k : k+length]
+			for ; k+wordLength <= len(s); k += wordLength {
+				fragment = s[k : k+wordLength]
 				if _, ok := m[fragment]; ok {
-					keys = append(keys, fragment)
+					substr = append(substr, fragment)
+					if _, ok2 := wordPos[fragment]; !ok2 {
+						wordPos[fragment] = []int{}
+					}
+					wordPos[fragment] = append(wordPos[fragment], k)
 					m2[fragment]++
 					count++
-					if _, ok2 := pos[fragment]; !ok2 {
-						pos[fragment] = k
-					}
 					if m2[fragment] > m[fragment] {
 						duplicate = true
 						break
@@ -117,30 +118,30 @@ func findSubstring(s string, words []string) []int {
 					break
 				}
 				if count == len(words) {
-					indices = append(indices, k+length-subStrLength)
+					indices = append(indices, k+wordLength-subStrLength)
 					match = true
 					break
 				}
 			}
 			if notFound {
-				j = k + length
+				j = k + wordLength
 			} else if duplicate {
-				j = pos[fragment] + length
+				j = wordPos[fragment][0] + wordLength
 			} else if match {
-				first := keys[0]
-				keys = keys[1:]
-				pos[first] += length
+				first := substr[0]
+				substr = substr[1:]
+				wordPos[first] = wordPos[first][1:]
 				m2[first]--
 				count--
-				j = k + length
+				j = k + wordLength
 			} else {
-				j = j + length
+				j = j + wordLength
 			}
 			if !match {
 				m2 = make(map[string]int)
-				keys = []string{}
+				substr = []string{}
 				count = 0
-				pos = make(map[string]int)
+				wordPos = make(map[string][]int)
 			}
 		}
 	}
