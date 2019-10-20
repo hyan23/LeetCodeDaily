@@ -1,4 +1,4 @@
-// CombinationSum.cs
+// .cs
 // Author: hyan23
 // <yyyy.mm.dd>
 // <problem url>
