@@ -3,6 +3,9 @@
 // 2019.03.05
 // https://leetcode.com/problems/palindrome-number/
 
+// Runtime: 108 ms
+// Best solution: 0 ms
+
 #include <iostream>
 
 using namespace std;

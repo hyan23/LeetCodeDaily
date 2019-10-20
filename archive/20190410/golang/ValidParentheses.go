@@ -3,6 +3,8 @@
 // 2019.03.19
 // https://leetcode.com/problems/valid-parentheses/
 
+// Runtime: 0 ms
+
 package main
 
 import "fmt"

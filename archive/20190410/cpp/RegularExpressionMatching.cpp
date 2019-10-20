@@ -4,6 +4,9 @@
 // https://leetcode.com/problems/regular-expression-matching/
 // I have consulted the official solution for this problem
 
+// Runtime: 24 ms (34.30% faster)
+// Best solution: 0 ms
+
 #include <iostream>
 #include <cstring>
 

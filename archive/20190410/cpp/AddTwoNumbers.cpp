@@ -3,6 +3,9 @@
 // 2019.03.03
 // https://leetcode.com/problems/add-two-numbers/
 
+// Runtime: 40 ms
+// Best solution: 0 ms
+
 #include <iostream>
 
 using namespace std;

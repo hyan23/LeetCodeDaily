@@ -3,6 +3,8 @@
 // 2019.03.20
 // https://leetcode.com/problems/merge-two-sorted-lists/
 
+// Runtime: 0 ms
+
 package main
 
 type ListNode struct {

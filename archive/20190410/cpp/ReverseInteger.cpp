@@ -3,6 +3,9 @@
 // 2019.03.03
 // https://leetcode.com/problems/reverse-integer/
 
+// Runtime: 12 ms
+// Best solution: 0 ms
+
 #include <iostream>
 #include <climits>
 

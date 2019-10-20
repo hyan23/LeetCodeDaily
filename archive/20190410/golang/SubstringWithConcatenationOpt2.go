@@ -3,6 +3,9 @@
 // 2019.04.10
 // https://leetcode.com/problems/substring-with-concatenation-of-all-words/
 
+// Runtime: 16 ms (72.75% faster)
+// Best solution: 0 ms
+
 package main
 
 import "fmt"

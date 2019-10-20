@@ -3,6 +3,8 @@
 // 2019.04.11
 // https://leetcode.com/problems/search-in-rotated-sorted-array/
 
+// Runtime: 0 ms
+
 package main
 
 import "fmt"

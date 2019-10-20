@@ -3,6 +3,9 @@
 // 2019.03.04
 // https://leetcode.com/problems/string-to-integer-atoi/
 
+// Runtime: 16 ms
+// Best solution: 0 ms
+
 #include <iostream>
 #include <climits>
 

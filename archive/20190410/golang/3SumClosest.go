@@ -3,6 +3,9 @@
 // 2019.03.11
 // https://leetcode.com/problems/3sum-closest/
 
+// Runtime: 4 ms (95.92% faster)
+// Best solution: 0 ms
+
 package main
 
 import (

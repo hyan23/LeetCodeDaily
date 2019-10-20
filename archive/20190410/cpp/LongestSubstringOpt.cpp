@@ -3,6 +3,9 @@
 // 2019.03.03
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
+// Runtime: 16 ms (70.58% faster)
+// Best solution: 0 ms
+
 #include <iostream>
 #include <cstring>
 

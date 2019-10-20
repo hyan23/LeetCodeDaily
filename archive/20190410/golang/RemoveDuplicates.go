@@ -3,6 +3,9 @@
 // 2019.04.07
 // https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 
+// Runtime: 44 ms (85.75% faster)
+// Best solution: 28 ms
+
 package main
 
 import "fmt"

@@ -3,6 +3,8 @@
 // 2019.04.10
 // https://leetcode.com/problems/longest-valid-parentheses/
 
+// Runtime: 0 ms (100% faster)
+
 package main
 
 import (

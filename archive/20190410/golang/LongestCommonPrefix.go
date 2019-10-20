@@ -3,6 +3,8 @@
 // 2019.03.10
 // https://leetcode.com/problems/longest-common-prefix/
 
+// Runtime: 0 ms
+
 package main
 
 import (

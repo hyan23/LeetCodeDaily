@@ -3,6 +3,9 @@
 // 2019.03.03
 // https://leetcode.com/problems/two-sum/
 
+// Runtime: 20 ms (41.58% faster)
+// Best solution: 0 ms
+
 #include <iostream>
 #include <vector>
 #include <map>

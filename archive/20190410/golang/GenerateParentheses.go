@@ -3,6 +3,9 @@
 // 2019.03.21
 // https://leetcode.com/problems/generate-parentheses/
 
+// Runtime: 4 ms (96.23% faster)
+// Best solution: 0 ms
+
 package main
 
 import "fmt"

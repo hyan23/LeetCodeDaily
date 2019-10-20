@@ -20,7 +20,7 @@ class Solution
         int charMap[256];
         memset(charMap, -1, sizeof (charMap));
         ////
-        
+
         int i = 0, j = 0;
         while (j < s.length())
         {
@@ -40,7 +40,7 @@ class Solution
             {
                 i = charMap[ch] + 1;
             }
-            //// 
+            ////
             charMap[ch] = j;
             int length = j - i + 1;
             if (length > result)

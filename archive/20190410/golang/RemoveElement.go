@@ -3,6 +3,8 @@
 // 2019.04.07
 // https://leetcode.com/problems/remove-element/
 
+// Runtime: 0 ms
+
 package main
 
 import "fmt"

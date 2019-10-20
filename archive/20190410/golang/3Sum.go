@@ -4,6 +4,9 @@
 // https://leetcode.com/problems/3sum/
 // 我的解法太蠢了
 
+// Runtime: 1556 ms (10.93% faster)
+// Best solution: 764 ms
+
 package main
 
 import (

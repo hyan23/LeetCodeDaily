@@ -3,6 +3,9 @@
 // 2019.03.04
 // https://leetcode.com/problems/longest-palindromic-substring/
 
+// Runtime: 20 ms (77.14% faster)
+// Best solution: 0 ms
+
 #include <iostream>
 
 using namespace std;

@@ -3,6 +3,8 @@
 // 2019.03.18
 // https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
+// Runtime: 0 ms
+
 package main
 
 import "fmt"

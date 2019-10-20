@@ -3,6 +3,9 @@
 // 2019.03.21
 // https://leetcode.com/problems/merge-k-sorted-lists/
 
+// Runtime: 12 ms (75.61% faster)
+// Best solution: 0 ms
+
 package main
 
 import (

@@ -3,6 +3,8 @@
 // 2019.02.23
 // https://leetcode.com/problems/swap-nodes-in-pairs/
 
+// Runtime: 0 ms
+
 package main
 
 import "fmt"
@@ -38,9 +40,9 @@ func swapPairs(head *ListNode) *ListNode {
 }
 
 func main() {
-	l := toLinkedList([]int{1,2,3,4})
+	l := toLinkedList([]int{1, 2, 3, 4})
 	fmt.Println(toList(swapPairs(l)))
-	l2 := toLinkedList([]int{1,2,3,4,5})
+	l2 := toLinkedList([]int{1, 2, 3, 4, 5})
 	fmt.Println(toList(swapPairs(l2)))
 	l3 := toLinkedList([]int{})
 	fmt.Println(toList(swapPairs(l3)))
@@ -49,7 +51,7 @@ func main() {
 }
 
 type ListNode struct {
-	Val int
+	Val  int
 	Next *ListNode
 }
 

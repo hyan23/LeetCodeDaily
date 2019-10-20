@@ -3,6 +3,8 @@
 // <yyyy.mm.dd>
 // <problem url>
 
+// <Analysis>
+
 package main
 
 func main() {
@@ -10,7 +12,7 @@ func main() {
 }
 
 type ListNode struct {
-	Val int
+	Val  int
 	Next *ListNode
 }
 

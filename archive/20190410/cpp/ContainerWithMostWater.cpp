@@ -4,6 +4,9 @@
 // https://leetcode.com/problems/container-with-most-water/
 // I have consulted the official solution for this problem
 
+// Runtime: 20 ms (65.38% faster)
+// Best solution: 0 ms
+
 #include <iostream>
 #include <vector>
 
@@ -39,9 +42,9 @@ int main(int argc, char *argv[])
 {
     (void)argc;
     (void)argv;
-    
+
     vector<int> height = {1,8,6,2,5,4,8,3,7};
     cout << Solution().maxArea(height) << endl;
-    
+
     return 0;
 }
