@@ -50,7 +50,12 @@ p = "a*c?b"
 Output: false
  */
 
-// <Analysis>
+// Runtime: 112 ms, faster than 54.26% of C# online submissions for Wildcard Matching.
+// Memory Usage: 31 MB, less than 100.00% of C# online submissions for Wildcard Matching.
+
+using System;
+using System.Diagnostics;
+using System.Linq;
 
 namespace csharp
 {
@@ -63,6 +68,54 @@ namespace csharp
 
         public void Test()
         {
+            Stopwatch watch = new Stopwatch();
+            watch.Start();
+
+            Console.WriteLine(IsMatch("aa", "a"));
+            Console.WriteLine(IsMatch("aa", "*"));
+            Console.WriteLine(IsMatch("cb", "?a"));
+            Console.WriteLine(IsMatch("adceb", "*a*b"));
+            Console.WriteLine(IsMatch("acdcb", "a*c?b"));
+            Console.WriteLine(IsMatch("acdcb", "*a"));
+            Console.WriteLine(IsMatch("", "*"));
+
+            watch.Stop();
+            Console.WriteLine($"Runtime: {watch.ElapsedMilliseconds} ms");
+        }
+
+        public bool IsMatch(string s, string p)
+        {
+            bool?[,] notes = new bool?[s.Length, p.Length];
+            return dp(notes, s, p, 0, 0);
+        }
+
+        public bool dp(bool?[,] notes, string s, string p, int i, int j)
+        {
+            if (i == s.Length)
+            {
+                return p.Substring(j).All(x => x == '*');
+            }
+            if (j == p.Length)
+            {
+                return i == s.Length;
+            }
+            if (notes[i, j].HasValue)
+            {
+                return notes[i, j].Value;
+            }
+            if (p[j] == '*')
+            {
+                return (bool)(notes[i, j] = dp(notes, s, p, i, j + 1) ||
+                    dp(notes, s, p, i + 1, j));
+            }
+            else if (p[j] == '?')
+            {
+                return (bool)(notes[i, j] = dp(notes, s, p, i + 1, j + 1));
+            }
+            else
+            {
+                return (bool)(notes[i, j] = s[i] == p[j] && dp(notes, s, p, i + 1, j + 1));
+            }
         }
     }
 }
