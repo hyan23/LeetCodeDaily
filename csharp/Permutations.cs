@@ -18,8 +18,8 @@ Output:
 ]
 */
 
-// Runtime: 256 ms, faster than 73.76% of C# online submissions for Permutations.
-// Memory Usage: 30.9 MB, less than 50.00% of C# online submissions for Permutations.
+// Runtime: 248 ms, faster than 92.43% of C# online submissions for Permutations.
+// Memory Usage: 30.7 MB, less than 50.00% of C# online submissions for Permutations.
 
 using System;
 using System.Collections.Generic;
@@ -56,27 +56,28 @@ namespace csharp
         public IList<IList<int>> Permute(int[] nums)
         {
             List<IList<int>> permutations = new List<IList<int>>();
-            Dictionary<int, bool> numDict = nums.ToDictionary(x => x, x => true);
-            Helper(permutations, new List<int>(), nums, numDict);
+            if (nums.Length > 0)
+            {
+                bool[] visited = new bool[nums.Length];
+                int[] permutation = new int[nums.Length];
+                Helper(permutations, permutation, 0, nums, visited);
+            }
             return permutations;
         }
 
-        private void Helper(IList<IList<int>> permutations, IList<int> permutation, int[] nums, Dictionary<int, bool> numDict)
+        private void Helper(IList<IList<int>> permutations, int[] permutation, int index, int[] nums, bool[] visited)
         {
-            bool empty = true;
-            foreach (var key in nums)
+            for (int i = 0; i < nums.Length; i++)
             {
-                if (numDict[key])
+                if (!visited[i])
                 {
-                    empty = false;
-                    numDict[key] = false;
-                    permutation.Add(key);
-                    Helper(permutations, permutation, nums, numDict);
-                    permutation.Remove(key);
-                    numDict[key] = true;
+                    visited[i] = true;
+                    permutation[index] = nums[i];
+                    Helper(permutations, permutation, index + 1, nums, visited);
+                    visited[i] = false;
                 }
             }
-            if (empty && permutation.Count > 0)
+            if (index == nums.Length)
             {
                 permutations.Add(permutation.ToList());
             }
