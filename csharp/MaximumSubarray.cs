@@ -13,8 +13,8 @@ Follow up:
 If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
  */
 
-// Runtime: 96 ms, faster than 86.87% of C# online submissions for Maximum Subarray.
-// Memory Usage: 24.7 MB, less than 10.00% of C# online submissions for Maximum Subarray.
+// Runtime: 92 ms, faster than 96.15% of C# online submissions for Maximum Subarray.
+// Memory Usage: 24.6 MB, less than 10.00% of C# online submissions for Maximum Subarray.
 
 using System;
 
@@ -35,10 +35,10 @@ namespace csharp
         }
 
         /*
-         * 1. 最大子序列的第一个元素必然是正数
-         * 2. 每个由正数开始的序列可以包含另一个正数，当且仅当：它的和大于零。否则，应该由另一个正数开始一个新序列
-         * 3. 最大子序列必在这些由正数开始的子序列中取得
-         * 如果一个序列没有正数，这算法也能工作。
+         * 1. 每个子序列必定从序号0, 1, 2, ..., N - 1开始
+         * 2. 一个从序号0, 1, 2, ..., N - 1开始的子序列可以包含另一个元素，
+         *      当且仅当：它的和大于零。否则，应该由另一个元素开始一个新的子序列
+         * 3. 最大子序列必在这些子序列中取得
          */
         public int MaxSubArray(int[] nums)
         {
