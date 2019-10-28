@@ -26,7 +26,7 @@ Your algorithm should run in O(n) time and uses constant extra space.
 // Runtime: 112 ms, faster than 7.59% of C# online submissions for First Missing Positive.
 // Memory Usage: 23.8 MB, less than 9.09% of C# online submissions for First Missing Positive.
 
-// my algorithm comsumes non-constant space
+// my algorithm consumes non-constant space
 // a solution I like: https://leetcode.com/problems/first-missing-positive/discuss/406862/Java-O(n)-time-O(1)-space-beat-100-*-2
 
 using System;
