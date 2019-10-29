@@ -23,7 +23,7 @@ Input: m = 7, n = 3
 Output: 28
  */
 
-// Runtime: 40 ms, faster than 73.37% of C# online submissions for Unique Paths.
+// Runtime: 36 ms, faster than 95.23% of C# online submissions for Unique Paths.
 // Memory Usage: 14.1 MB, less than 9.09% of C# online submissions for Unique Paths.
 
 using System;
@@ -48,13 +48,13 @@ namespace csharp
         public int UniquePaths(int m, int n)
         {
             int[,] dp = new int[m, n];
-            for (int i = 0; i < m; i++)
-            {
-                dp[i, 0] = 1;
-            }
             for (int i = 0; i < n; i++)
             {
                 dp[0, i] = 1;
+            }
+            for (int i = 1; i < m; i++)
+            {
+                dp[i, 0] = 1;
             }
             for (int i = 1; i < m; i++)
             {
