@@ -63,24 +63,25 @@ namespace csharp
 
             Console.WriteLine(IsNumber(""));
             Console.WriteLine(IsNumber("  "));
-            Console.WriteLine(IsNumber("  .7.6"));
             Console.WriteLine(IsNumber("  e91"));
             Console.WriteLine(IsNumber("0+"));
-            Console.WriteLine(IsNumber("-10."));
             Console.WriteLine(IsNumber("5.47e "));
             Console.WriteLine(IsNumber("-"));
+            Console.WriteLine(IsNumber("e"));
             Console.WriteLine(IsNumber("2 8"));
             Console.WriteLine(IsNumber("6-8"));
-            Console.WriteLine(IsNumber("."));
-            Console.WriteLine(IsNumber(".e1"));
-            Console.WriteLine(IsNumber("7.e-."));
 
-            Console.WriteLine(IsNumber(".1"));
-            Console.WriteLine(IsNumber(" .9"));
             Console.WriteLine(IsNumber("2e8"));
             Console.WriteLine(IsNumber("-758.32e-34"));
             Console.WriteLine(IsNumber("-95.2e05"));
             Console.WriteLine(IsNumber("-95.2e+05"));
+
+            Console.WriteLine(IsNumber(".1"));
+            Console.WriteLine(IsNumber("3."));
+            Console.WriteLine(IsNumber("."));
+            Console.WriteLine(IsNumber(" .9"));
+            Console.WriteLine(IsNumber(".e1"));
+            Console.WriteLine(IsNumber("7.e-."));
         }
 
         public bool IsNumber(string s)

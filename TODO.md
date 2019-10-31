@@ -8,6 +8,7 @@
 [ ] https://leetcode.com/problems/sudoku-solver/
 [x] https://leetcode.com/problems/rotate-image/
 [x] https://leetcode.com/problems/n-queens/
+[ ] https://leetcode.com/problems/rotate-list/
 
 # Optimizations
 
