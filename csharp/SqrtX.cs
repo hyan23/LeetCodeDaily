@@ -17,7 +17,8 @@ Explanation: The square root of 8 is 2.82842..., and since
              the decimal part is truncated, 2 is returned.
  */
 
-// <Analysis>
+// Runtime: 32 ms, faster than 99.44% of C# online submissions for Sqrt(x).
+// Memory Usage: 14.2 MB, less than 7.14% of C# online submissions for Sqrt(x).
 
 using System;
 
@@ -39,11 +40,30 @@ namespace csharp
             Console.WriteLine(MySqrt(4));
             Console.WriteLine(MySqrt(8));
             Console.WriteLine(MySqrt(2147483647));
+            Console.WriteLine(MySqrt(2147395599));
         }
 
         public int MySqrt(int x)
         {
-            return 0;
+            if (x < 2)
+            {
+                return x;
+            }
+            int low = 1, high = x / 2;
+            while (low < high)
+            {
+                float mid = (low + high) / 2;
+                float p = mid * mid;
+                if (p > x)
+                {
+                    high = (int)(mid - 1);
+                }
+                else
+                {
+                    low = (int)(mid + 1);
+                }
+            }
+            return (double)low * low > x ? low - 1 : low;
         }
     }
 }
