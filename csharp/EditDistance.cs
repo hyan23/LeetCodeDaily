@@ -59,15 +59,6 @@ namespace csharp
 
         public int MinDistance(string word1, string word2)
         {
-            if (word1.Length == 0)
-            {
-                return word2.Length;
-            }
-            if (word2.Length == 0)
-            {
-                return word1.Length;
-            }
-
             int[,] dp = new int[word1.Length + 1, word2.Length + 1];
 
             dp[0, 0] = 0;
@@ -84,8 +75,15 @@ namespace csharp
             {
                 for (int j = 1; j <= word2.Length; j++)
                 {
-                    int min = Math.Min(dp[i - 1, j - 1], Math.Min(dp[i - 1, j], dp[i, j - 1]));
-                    dp[i, j] = min + (word1[i - 1] == word2[j - 1] ? 0 : 1);
+                    // why?
+                    if (word1[i - 1] == word2[j - 1])
+                    {
+                        dp[i, j] = dp[i - 1, j - 1];
+                    }
+                    else
+                    {
+                        dp[i, j] = Math.Min(dp[i - 1, j - 1], Math.Min(dp[i - 1, j], dp[i, j - 1])) + 1;
+                    }
                 }
             }
 
