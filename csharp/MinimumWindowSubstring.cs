@@ -51,7 +51,7 @@ namespace csharp
         public string MinWindow(string s, string t)
         {
             int count = 0, distinctChars = 0;
-            int[] occurences = new int[256], targets = new int[256];
+            int[] occurrences = new int[256], targets = new int[256];
             foreach (var ch in t)
             {
                 if (targets[ch] == 0)
@@ -67,15 +67,15 @@ namespace csharp
             while (right < s.Length)
             {
                 char ch = s[right];
-                occurences[ch]++;
-                if (targets[ch] > 0 && occurences[ch] == targets[ch])
+                occurrences[ch]++;
+                if (targets[ch] > 0 && occurrences[ch] == targets[ch])
                 {
                     count++;
                 }
 
-                while (left <= right && (ch = s[left]) < 256 && (targets[ch] == 0 || occurences[ch] > targets[ch]))
+                while (left <= right && (ch = s[left]) < 256 && (targets[ch] == 0 || occurrences[ch] > targets[ch]))
                 {
-                    occurences[ch]--;
+                    occurrences[ch]--;
                     left++;
                 }
 
