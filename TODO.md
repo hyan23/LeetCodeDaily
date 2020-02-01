@@ -8,6 +8,8 @@
 [x] https://leetcode.com/problems/rotate-image/
 [ ] https://leetcode.com/problems/n-queens/
 [x] https://leetcode.com/problems/rotate-list/
+[ ] https://leetcode.com/problems/largest-rectangle-in-histogram/
+[ ] https://leetcode.com/problems/maximal-rectangle/
 
 # Optimizations
 
