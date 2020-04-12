@@ -3,7 +3,8 @@
 // 2020.04.11
 // https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/528/week-1/3289/
 
-// 
+// Runtime: 92 ms
+// Memory Usage: 24.1 MB
 
 using System;
 
@@ -20,19 +21,10 @@ namespace csharp
         {
         }
 
-        public int MaxProfit(int[] prices)
+        public int CountElements(int[] arr)
         {
-            int max = 0;
-            int buy = prices[0];
-            foreach (var p in prices)
-            {
-                if (buy < p)
-                {
-                    max += p - buy;
-                }
-                buy = p;
-            }
-            return max;
+            HashSet<int> hs = new HashSet<int>(arr);
+            return arr.Count(x => hs.Contains(x + 1));
         }
     }
 }
