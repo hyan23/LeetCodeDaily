@@ -10,6 +10,8 @@
 [x] https://leetcode.com/problems/rotate-list/
 [ ] https://leetcode.com/problems/largest-rectangle-in-histogram/
 [ ] https://leetcode.com/problems/maximal-rectangle/
+[ ] https://leetcode.com/problems/scramble-string/
+[ ] https://leetcode.com/problems/binary-tree-maximum-path-sum/
 
 # Optimizations
 
@@ -17,3 +19,4 @@
 [ ] Optimize CombinationSumII.cs
 [ ] Optimize FirstMissingPositive.cs
 [ ] Optimize Implement_strStr.cs
+[ ] Optimize ProductOfArrayExceptSelf.cs
